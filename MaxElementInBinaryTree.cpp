@@ -31,7 +31,7 @@ int FindMaxInTree::findMaxRecurse(TreeNode *root)
         temp = findMaxRecurse(root->left);
     if (root->right)
         temp = max(temp, findMaxRecurse(root->right));
-    return temp;
+    return max(temp, root->data);
 }
 
 int FindMaxInTree::findMax(TreeNode *root)
@@ -60,10 +60,10 @@ int FindMaxInTree::findMax(TreeNode *root)
 
 int main()
 {
-    TreeNode *root = new TreeNode(1);
+    TreeNode *root = new TreeNode(41);
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);
-    root->left->left = new TreeNode(4);
+    root->left->left = new TreeNode(21);
     root->left->right = new TreeNode(5);
     root->right->left = new TreeNode(16);
     root->right->right = new TreeNode(7);
